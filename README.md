@@ -35,13 +35,10 @@ If you don't want to install Git, you can download <a href="https://github.com/G
 # Thank you <a href="https://githacktools.blogspot.com" target="_blank"><span style="color: blue">GitHackTools</span></a> (myself) for programming this tool 🙂
 
 # Contact to coder
-Website: <a href="https://githacktools.blogspot.com" target="_blank"><span style="color: blue">GitHackTools.blogspot.com</span></a>
-
-Twitter: <a href="https://twitter.com/SecureGF" target="_blank"><span style="color: blue">@SecureGF</span></a>
-
-Facebook: <a href="https://githacktools.blogspot.com" target="_blank"><span style="color: blue">@GitHackTools</span></a>
-
-Google Plus: <strong>It's gone.</strong>
+ * Website: <a href="https://githacktools.blogspot.com" target="_blank"><span style="color: blue">GitHackTools.blogspot.com</span></a>
+ * Twitter: <a href="https://twitter.com/SecureGF" target="_blank"><span style="color: blue">@SecureGF</span></a>
+ * Facebook: <a href="https://githacktools.blogspot.com" target="_blank"><span style="color: blue">@GitHackTools</span></a>
+ * Google Plus: <strong>It's gone.</strong>
 
 # To-do list
  * Check anonymous login.
