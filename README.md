@@ -34,6 +34,9 @@ If you don't want to install Git, you can download <a href="https://github.com/G
 
 # Thank you <a href="https://githacktools.blogspot.com" target="_blank"><span style="color: blue">GitHackTools</span></a> (myself) for programming this tool 🙂
 
+# Note
+Your brute force speed may depend on your ping, victim's ping, your internet. Don't brute force with a big wordlist with a small RAM.
+
 # Contact to coder
  * Website: <a href="https://githacktools.blogspot.com" target="_blank"><span style="color: blue">GitHackTools.blogspot.com</span></a>
  * Twitter: <a href="https://twitter.com/SecureGF" target="_blank"><span style="color: blue">@SecureGF</span></a>
