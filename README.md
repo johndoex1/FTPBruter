@@ -13,3 +13,36 @@ You have to install Python 3 first:
        cd FTPBruter
        python3 ftpbruter.py
        
+# Install and Run in Windows
+Download and run  and Python 3.7.x setup file from <a href="https://python.org" target="_blank"><span style="color: blue">Python.org</span></a>.
+On <strong>Install Python 3.7</strong>, enable <strong>Add Python 3.7 to PATH</strong>.
+
+Download and run Git setup file from <a href="https://Git-scm.com" target="_blank"><span style="color: blue">Git-scm.com</span></a> and choose <strong>Use Git from Windows Command Propmt</strong>.
+
+Afther that, open PowerShell or Command Propmt and enter these commands:
+
+    git clone https://github.com/GitHackTools/FTPBruter
+    cd FTPBruter
+    python3 ftpbruter.py
+
+If you don't want to install Git, you can download <a href="https://github.com/GitHackTools/FTPBruter/archive/master.zip" target="_blank"><span style="color: blue">FTPBruter-master.zip</span></a>, extract and use it.
+
+# Screenshots
+![Run FTPBruter on Manjaro](https://raw.githubusercontent.com/GitHackTools/Store-the-pictures/master/FTPBruter%201.0%20-%20Manjaro.png)
+![Run FTPBruter on Parrot Security OS](https://raw.githubusercontent.com/GitHackTools/Store-the-pictures/master/FTPBruter%201.0%20-%20ParrotSec.png)
+![Run FTPBruter on Windows 10](https://raw.githubusercontent.com/GitHackTools/Store-the-pictures/master/FTPBruter%201.0%20-%20Windows.png)
+
+# Thank you <a href="https://githacktools.blogspot.com" target="_blank"><span style="color: blue">GitHackTools</span></a> (myself) for programming this tool 🙂
+
+# Contact to coder
+Website: <a href="https://githacktools.blogspot.com" target="_blank"><span style="color: blue">GitHackTools.blogspot.com</span></a>
+
+Twitter: <a href="https://twitter.com/SecureGF" target="_blank"><span style="color: blue">@SecureGF</span></a>
+
+Facebook: <a href="https://githacktools.blogspot.com" target="_blank"><span style="color: blue">@GitHackTools</span></a>
+
+Google Plus: <strong>It's gone.</strong>
+
+# To-do list
+ * Check anonymous login.
+ * Auto-change proxy with brute force.
