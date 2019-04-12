@@ -1,7 +1,7 @@
 # About FTPBruter 1.0
-Brute forcing tool for a FTP server. FTPBruter can work in any OS if they have and support Python 3.
+Brute forcing tool for FTP server. FTPBruter can work in any OS if they have and support Python 3.
 
-# Features
+# Feature
  * Brute force a FTP server with a username or a list of usernames (That's all).
  
 # Install and Run on Linux
@@ -13,13 +13,13 @@ You have to install Python 3 first:
        cd FTPBruter
        python3 ftpbruter.py
        
-# Install and Run in Windows
-Download and run  and Python 3.7.x setup file from <a href="https://python.org" target="_blank"><span style="color: blue">Python.org</span></a>.
+# Install and Run on Windows
+Download and run Python 3.7.x setup file from <a href="https://python.org" target="_blank"><span style="color: blue">Python.org</span></a>.
 On <strong>Install Python 3.7</strong>, enable <strong>Add Python 3.7 to PATH</strong>.
 
 Download and run Git setup file from <a href="https://Git-scm.com" target="_blank"><span style="color: blue">Git-scm.com</span></a> and choose <strong>Use Git from Windows Command Propmt</strong>.
 
-Afther that, open PowerShell or Command Propmt and enter these commands:
+After that, open PowerShell or Command Propmt and enter these commands:
 
     git clone https://github.com/GitHackTools/FTPBruter
     cd FTPBruter
@@ -43,6 +43,6 @@ Your brute force speed may depend on your ping, victim's ping, your internet. Do
  * Facebook: <a href="https://githacktools.blogspot.com" target="_blank"><span style="color: blue">@GitHackTools</span></a>
  * Google Plus: <strong>It's gone.</strong>
 
-# To-do list
+# To-do lists
  * Check anonymous login.
  * Auto-change proxy with brute force.
