@@ -146,7 +146,7 @@ def ftpbruter(target, username, password):
         ftp.quit()
         print()
         print("\033[1;92m[i]\033[1;37m Brute force has done!")
-        print("    Username :\033[1;93m",username)
+        print("    Username : \033[1;93m",username)
         print("    \033[1;37mPassword : \033[1;93m",password)
         print()
         print("\033[1;92m[i]\033[1;37m Press Ctrl+C to exit right now!\033[0m")
