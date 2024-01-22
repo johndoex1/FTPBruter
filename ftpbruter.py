@@ -1,8 +1,13 @@
-﻿#!/usr/bin/python3
+#!/usr/bin/python3
+
+# _*_ coding:utf-8 _*_
+
+#to check for anonymous login,provide the username as 'anonymous' or ' '  
 
 import socket
 from os import path, system, name
 from ftplib import FTP
+from  sys import exit,hexversion
 
 def banner():
     print("""\033[93m ______   _______   _____    ____                   _                 
@@ -20,6 +25,23 @@ def clear():
     else:
         system('clear')
 
+
+#anonymous login checker
+def anon_ftpbruter(target, username, password):
+    try:
+        ftp = FTP(target)
+
+        if ftp.login(username,password):
+            print('\033[1;37m[+]\033[37m Anonymous login allowed!\033[0m')
+            ftp.quit()
+
+    except:
+        print('\033[1;91m[+]\033[37m Anonymous login not allowed!\033[0m')
+
+    exit(1)
+
+
+#updating
 def main():
     try:
         print()
@@ -30,6 +52,12 @@ def main():
             
             if choice[0].upper() == 'N':
                 username = str(input('\033[1;96m[-]\033[37m Enter username: \033[0m'))
+                    
+                #anonymous login
+                if username == 'Anonymous' or username == 'anonymous' or username == '':
+                    #ftpbruter(target,'anonymous','anonymous')
+                    anon_ftpbruter(target,'anonymous','anonymous')
+                    
                 check_wordlist(target, username)
 
             elif choice[0].upper() == 'Y':
@@ -40,9 +68,11 @@ def main():
             main()
 
     except KeyboardInterrupt:
-        print()
-        print("Exiting...")
-        exit()                
+            print()
+            print("Exiting...")
+            exit()                
+
+
 
 def check_port(target):
     try:
@@ -85,7 +115,7 @@ def check_userlist(target):
     except KeyboardInterrupt:
         print()
         print("Exiting...")
-        exit()
+        exit()  #sys.exit()
 
 def check_wordlist(target, username):
     try:
@@ -156,6 +186,11 @@ def ftpbruter(target, username, password):
     except:
         pass
 
-clear()
-banner()
-main()
+#main
+if __name__ == '__main__':
+    if hexversion >= 0x03000000:
+        clear()
+        banner()
+        main()
+    else:
+        exit('\033[1;91m[+]\033[37m Required Python Version > 3.0!\033[0m')
